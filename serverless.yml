@@ -1,0 +1,24 @@
+service: norshukri-c5-serverless-2
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  norapi:
+    handler: index.shukri
+    events:
+      - httpApi:
+          path: /
+          method: get
+
+  shukripost:
+    handler: index.shukripost
+    events:
+      - httpApi:
+          path: /shukri
+          method: post
+
+plugins:
+  - serverless-offline
