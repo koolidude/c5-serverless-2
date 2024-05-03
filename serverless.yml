@@ -16,7 +16,7 @@ functions:
           path: /
           method: get
       - sqs:
-          arn: arn:aws:sqs:us-east-1:255945442255:albert-serverless-sqs
+          arn: arn:aws:sqs:us-east-1:255945442255:shukri-serverless-sqs
 
 
   shukripost:
@@ -38,7 +38,10 @@ resources:
       Type: "AWS::SQS::Queue"
       Properties:
         QueueName: "shukri-queue"
-
+    ShukriS3Bucket:
+      Type: "AWS::S3::Bucket"
+      Properties:
+        BucketName: "shukri-s3-bucket"
 
 plugins:
   - serverless-offline
