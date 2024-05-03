@@ -1,4 +1,4 @@
-module.exports.shukri = async (event) => {
+module.exports.shukritwo = async (event) => {
   return {
     statusCode: 200,
     body: JSON.stringify(
@@ -11,7 +11,7 @@ module.exports.shukri = async (event) => {
   };
 };
 
-module.exports.shukripost = async (event) => {
+module.exports.shukriposttwo = async (event) => {
   return {
     statusCode: 200,
     body: JSON.stringify(

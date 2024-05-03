@@ -1,4 +1,4 @@
-service: norshukri-c5-serverless-2
+service: norshukri-c5-serverless-3
 frameworkVersion: '3'
 
 provider:
@@ -7,18 +7,22 @@ provider:
 
 functions:
   norapi:
-    handler: index.shukri
+    handler: index.shukritwo
     events:
       - httpApi:
           path: /
           method: get
 
   shukripost:
-    handler: index.shukripost
+    handler: index.shukriposttwo
     events:
       - httpApi:
-          path: /shukri
+          path: /shukripost
           method: post
 
 plugins:
   - serverless-offline
+
+custom:
+  serverless-offline:
+    httpPort: 3001
