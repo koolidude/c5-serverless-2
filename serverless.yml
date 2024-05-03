@@ -25,6 +25,20 @@ functions:
       - httpApi:
           path: /shukripost
           method: post
+      - sqs:
+          arn:
+            Fn::GetAtt:
+              - ShukriQueue
+              - Arn
+
+
+resources:
+  Resources:
+    ShukriQueue:
+      Type: "AWS::SQS::Queue"
+      Properties:
+        QueueName: "shukri-queue"
+
 
 plugins:
   - serverless-offline
