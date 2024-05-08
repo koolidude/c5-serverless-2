@@ -9,9 +9,9 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: Run installation of dependencies commands
-        run: npm cache clean --force
-        run: npm cache verify
-        run: npm install
+      - run: npm cache clean --force
+      - run: npm cache verify
+      - run: npm install
 
   job-1:
     runs-on: ubuntu-latest
