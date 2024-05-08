@@ -20,31 +20,11 @@ module.exports.shukriposttwo = async (event) => {
   console.log('POST method')
   console.log(event)
 
-  let body;
-  try {
-      body = JSON.parse(event.body);
-  } catch (error) {
-      console.error('Failed to parse JSON: ', error)
-  }
-
-  // Create a new S3 bucket
-  const bucketParams = {
-      Bucket: 'MyS3Bucket', // Replace with your desired bucket name
-  };
-
-  try {
-      const data = await s3.createBucket(bucketParams).promise();
-      console.log('Bucket created successfully', data.Location);
-  } catch (error) {
-      console.error('Failed to create bucket: ', error);
-  }
-
-
   return {
     statusCode: 200,
     body: JSON.stringify(
       {
-        message: "This is post function",
+        message: "This is post function!",
         input: event,
       },
       null,
